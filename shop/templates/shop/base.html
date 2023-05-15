@@ -1,0 +1,162 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}">
+    
+
+    <!--Owl Carousel CSS-->
+    <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.min.css' %}">
+
+    <!--FontAwesome CSS-->
+    <link rel="stylesheet" href="{% static 'shop/css/all.min.css' %}">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+
+
+    <title>Fastshop |   {% block title %} {% endblock title %} </title>
+  </head>
+
+  <body>
+    <!-- Start Preloader -->
+   <div class="loader"></div>  
+    <!-- End Preloader -->
+      
+<!--start Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+     <div class="container">
+       <a class="navbar-brand" href="/"><img src="{% static 'shop/images/product/whitelogo.png' %}" alt="" style="width: 150px;"></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle text-white" href="#" id="electronicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Electronics
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <li><a class="dropdown-item" href="{% url 'mobile' %}">Mobile</a></li>
+               <li><a class="dropdown-item" href="{% url 'laptop' %}">Laptop</a></li>
+             </ul>
+           </li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Fashion
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
+               <li><a class="dropdown-item" href="{% url 'topwear' %}">Top Wear</a></li>
+               <li><a class="dropdown-item" href="{% url 'bottomwear' %}">Bottom Wear</a></li>
+             </ul>
+           </li>
+         </ul>
+         <form class="d-flex">
+           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+           <button class="btn btn-danger" type="submit">S</button>
+         </form>
+         <div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if request.user.is_authenticated %}
+           <li class="nav-item dropdown mx-2">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{request.user.username|capfirst}}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+            <li class="nav-item mx-2">
+             <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-danger">{{totalitem}}</span> Cart </a>
+            </li>
+            {% else %}
+            <li class="nav-item mx-2">
+             <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+            </li>
+            <li class="nav-item mx-2">
+             <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
+            </li>
+            {% endif %}
+          </ul>
+         </div>
+       </div>
+     </div>
+    </nav>
+
+    <!--End Nav bar-->
+
+    {% block banner_slider %} {% endblock banner_slider %}
+    {% block livesale %} {% endblock livesale %}
+    {% block main-content %} {% endblock main-content %}
+    {% block payment-gateway %} {% endblock payment-gateway %}
+    <!--             Start Footer              -->
+    <div class="footer">
+    <div class="container ">
+    <div class="row">
+    <div class="footer-col-1">
+    <h3>Download our App</h3>
+    <p>Download App for Android and IOS mobile phone.</p>
+    <div class="app-logo">
+      <img src="{% static 'shop/images/payavail/app-store.png' %}">
+      <img src="{% static 'shop/images/payavail/play-store.png' %}">
+    </div>
+    </div>
+    <div class="footer-col-2">
+    <img src="{% static 'shop/images/payavail/whitelogo.png' %}">
+    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits
+        of Sports Accessible to the Many.</p>
+    </div>
+    <div class="footer-col-3">
+    <h3>Useful links</h3>
+      <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Retrun Policy</li>
+            <li>Join Affiliate</li>
+            </ul>
+            </div>
+    <div class="footer-col-4">
+      <h3>Follow us</h3>
+        <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>Youtube</li>
+        </ul>
+    </div>
+    </div>
+    <hr>
+    <div class="text-center">
+      <img src="{% static 'shop/images/payavail/payments.png' %}">
+    </div>
+    
+   </div>
+   </div>
+
+     <!--          End Footer             -->
+<!-- Jquery -->
+    <script src="{% static 'shop/js/jquery-3.6.0.min.js' %}"></script>
+    
+ <!-- Bootstrap Bundle with Popper -->
+    <script src="{% static 'shop/js/propper.js' %}"></script>
+{% comment %} <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+     {% endcomment %}
+ <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'shop/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'shop/js/all.min.js' %}"></script>
+    <script src="{% static 'shop/js/myscript.js' %}"></script>
+  </body>
+</html>
+

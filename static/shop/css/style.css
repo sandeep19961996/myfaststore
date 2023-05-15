@@ -1,0 +1,158 @@
+.owl-carousel .item {
+    /* border: 1px solid black; */
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    ;
+}
+
+.owl-next {
+    float: right;
+}
+
+.owl-prev {
+    float: left;
+}
+
+.owl-prev span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.owl-next span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.roww {
+    background-color: black;
+    color: yellow;
+}
+
+.foot3 {
+    background-color: black;
+}
+
+.foottext {
+    color: yellow;
+}
+
+.text7 {
+    width: 380px;
+    text-align: center;
+    height: 40px;
+    background-color: black;
+    color: yellow;
+}
+
+
+/*--------------------footer------------------*/
+
+.footer {
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14pz;
+    padding: 30px 0 10px;
+}
+
+.footer p {
+    color: #8a8a8a;
+}
+
+.footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+    min-width: 250px;
+    margin-bottom: 10px;
+}
+
+.footer-col-1 {
+    flex-basis: 30%;
+}
+
+.footer-col-2 {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-col-2 img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-col-3,
+.footer-col-4 {
+    flex-basis: 12%;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.app-logo {
+    margin-top: 20px;
+}
+
+.app-logo img {
+    width: 140px;
+}
+
+.footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin-top: -15px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+}
+
+.social-container .btn a,
+.btn a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*--------------------media query for less 600 screen------------------*/
+
+@media only screen and (max-width: 600px) {
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        flex-basis: 100%;
+    }
+    .brands .col-sm-2 {
+        width: 50%;
+    }
+    .payment .col-sm-3 {
+        width: 50%;
+    }
+    .m-3 {
+        text-align: center;
+    }
+}
