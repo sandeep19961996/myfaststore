@@ -1,24 +1,15 @@
 {
-    "version":2,
+   
     "builds":[
         {
         "src":"Shopping/wsgi.py",
         "use":"@vercel/python",
         "config":{"maxLambdaSize":"15mb","runtime": "python3.11.2"}
-    },
-   {
-    "src":"build_files.sh",
-    "use":"@vercel/static-build",
-    "config":{
-        "distDir":"staticfiles.build"
-    }   }
+    }
+  
 ],
     "routes":[
-        { 
-            "src":"/static/(.*)",
-            "dest":"/static/$1"
-
-        },
+      
         {
             "src":"/(.*)",
             "dest":"Shopping/wsgi.py"
