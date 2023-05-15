@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(5#jw4284ds9uywepqvf@fldh*rs)6g3d+-c2fwgmn!kd3!mme
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['faststore22.herokuapp.com','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['faststore22.vercel.app.com','.now.sh','localhost', '127.0.0.1']
 
 
 # Application definition
